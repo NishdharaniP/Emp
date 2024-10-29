@@ -1,0 +1,34 @@
+/* C:\Users\varun\employee-management-app\frontend\src\styles\NavBar.css */
+
+.navbar {
+    background-color: #333; /* Dark background */
+    padding: 10px; /* Padding for the navbar */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .logo {
+    color: #fff; /* White text for the logo */
+    font-size: 24px; /* Logo font size */
+  }
+  
+  .nav-links {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Display links in a row */
+  }
+  
+  .nav-link {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Padding around links */
+  }
+  
+  .nav-link:hover {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+  }
+  

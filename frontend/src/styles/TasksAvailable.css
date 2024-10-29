@@ -1,0 +1,52 @@
+.tasks-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .tasks-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .departments-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .department-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 20px); /* Responsive width for cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .department-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .department-card h3 {
+    margin: 0 0 10px;
+  }
+  
+  .department-card h4 {
+    margin: 0 0 15px;
+    color: #555;
+  }
+  
+  .tasks-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .tasks-list li {
+    margin-bottom: 5px;
+  }
