@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import { fetchEmployees, deleteEmployee } from '../services/employeeService';
 import { Link } from 'react-router-dom';
 import './EmployeeStyle.css';
@@ -42,6 +42,44 @@ const EmployeeList = () => {
             </ul>
         </div>
     );
+};
+
+export default EmployeeList;
+*/
+// src/components/EmployeeList.js
+// src/components/EmployeeList.js
+import React, { useEffect, useState } from 'react';
+import { fetchEmployees } from '../services/employeeService';
+import './EmployeeStyle.css';
+
+const EmployeeList = () => {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const getEmployees = async () => {
+      try {
+        const employeesData = await fetchEmployees();
+        console.log('Fetched employees:', employeesData); // Debugging: Log fetched data
+        setEmployees(employeesData);
+      } catch (error) {
+        console.error('Failed to fetch employees:', error);
+      }
+    };
+    getEmployees();
+  }, []);
+
+  return (
+    <div>
+      <h2>Employee List</h2>
+      <ul>
+        {employees.map((employee) => (
+          <li key={employee._id}>
+            {employee.name} - {employee.position}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default EmployeeList;
