@@ -16,6 +16,8 @@ const EmployeeSchema = new mongoose.Schema({
   bloodGroup: { type: String, required: true }, // Blood Group
   education: { type: String }, // Education details
   languagesKnown: { type: [String] }, // Array of languages known
+  username: { type: String, required: true, unique: true }, // Username for login
+  password: { type: String, required: true }, // Password for login
 });
 
 module.exports = mongoose.model('Employee', EmployeeSchema);

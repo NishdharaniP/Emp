@@ -20,8 +20,8 @@
   }
   
   .department-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #0c0606;
+    border: 1px solid #0f0606;
     border-radius: 8px;
     padding: 20px;
     flex: 1 1 calc(30% - 20px); /* Responsive width for cards */
@@ -39,7 +39,7 @@
   
   .department-card h4 {
     margin: 0 0 15px;
-    color: #555;
+    color: #0a0707;
   }
   
   .tasks-list {
