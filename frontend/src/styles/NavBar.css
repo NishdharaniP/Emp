@@ -1,11 +1,11 @@
 .navbar {
-  background-color: #f8f9fa;
+  background-color: #f4f9fd;
   padding: 10px 0;
 }
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;                                                                 
   align-items: center;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .card-button.edit-employee {
-  background-color: #b2dfdb; /* Light teal */
+  background-color: #cef590; /* Light teal */
 }
 
 .card-button.employee-list {
