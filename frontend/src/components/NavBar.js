@@ -1,49 +1,41 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/NavBar.css'; // Import the updated CSS
 
 const NavBar = () => {
   const navigate = useNavigate();
 
-  const DashboardDisplay = () => navigate('/dashboard');
-  const AboutDisplay = () => navigate('/about');
-  const TasksDisplay = () => navigate('/tasksavailable');
-  const SummaryDisplay = () => navigate('/summary');
-  const CollaboratesDisplay = () => navigate('/collaborates');
-  const AddEmployeeDisplay = () => navigate('/add');
-  const EditDisplay = () => navigate('/edit/:id');
-  const EmployeeListDisplay = () => navigate('/list');
-
   return (
-    <div className="container flex items-center justify-between h-16 px-4 mx-auto bg-black sm:px-6 lg:px-8">
-      <div className="flex items-center">
-        <div className="ml-2 text-lg font-bold text-white">StaffSync</div>
-      </div>
-      <div className="flex-row items-center gap-8 p-2 text-lg font-medium md:flex">
-        <div className="flex">
-          <div className="p-2 mr-2 text-black bg-white rounded-lg">
-            <button onClick={DashboardDisplay}>Dashboard</button>
-          </div>
-          <div className="p-2 mr-2 text-black bg-white rounded-lg">
-            <button onClick={AboutDisplay}>About</button>
-          </div>
-          <div className="p-2 mr-2 text-black bg-white rounded-lg">
-            <button onClick={TasksDisplay}>Tasks Available</button>
-          </div>
-          <div className="p-2 mr-2 text-black bg-white rounded-lg">
-            <button onClick={SummaryDisplay}>Summary</button>
-          </div>
-          <div className="p-2 text-black bg-white rounded-lg">
-            <button onClick={CollaboratesDisplay}>Collaborates</button>
-          </div>
-          <div className="p-2 text-black bg-white rounded-lg">
-            <button onClick={AddEmployeeDisplay}>Add Employee</button>
-          </div>
-          <div className="p-2 text-black bg-white rounded-lg">
-            <button onClick={EditDisplay}>Edit Employee</button>
-          </div>
-          <div className="p-2 text-black bg-white rounded-lg">
-            <button onClick={EmployeeListDisplay}>Employee List</button>
-          </div>
+    <div className="navbar">
+      <div className="navbar-container">
+        <div className="logo">StaffSync</div>
+        <div className="nav-links">
+          {/* Each button is given a specific class for unique background colors */}
+          <button className="card-button dashboard" onClick={() => navigate('/dashboard')}>
+            Dashboard
+          </button>
+          <button className="card-button about" onClick={() => navigate('/about')}>
+            About
+          </button>
+          <button className="card-button tasks" onClick={() => navigate('/tasksavailable')}>
+            Tasks Available
+          </button>
+          <button className="card-button summary" onClick={() => navigate('/summary')}>
+            Summary
+          </button>
+          <button className="card-button collaborates" onClick={() => navigate('/collaborates')}>
+            Collaborates
+          </button>
+          <button className="card-button add-employee" onClick={() => navigate('/add')}>
+            Add Employee
+          </button>
+          <button className="card-button edit-employee" onClick={() => navigate('/edit')}>
+            Edit Employee
+          </button>
+          <button className="card-button employee-list" onClick={() => navigate('/list')}>
+            Employee List
+          </button>
         </div>
       </div>
     </div>

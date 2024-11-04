@@ -1,108 +1,100 @@
-/* EmployeeStyles.css */
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef;
-    margin: 0;
-    padding: 20px;
-}
-
-h2 {
-    color: #343a40;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Employee Form Container */
 form {
-    background: #fff;
+    max-width: 600px;
+    margin: auto;
     padding: 30px;
+    background-color: #5b759b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Form Heading */
+h2 {
+    text-align: center;
+    color: #4a4a4a;
     margin-bottom: 20px;
 }
 
+/* Form Labels */
+label {
+    display: block;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input Fields */
 input[type="text"],
-input[type="number"],
 input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
 input[type="date"],
 select {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ced4da;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    transition: border-color 0.2s;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus,
-select:focus {
-    border-color: #80bdff;
-    outline: none;
+/* Checkbox Styles */
+fieldset {
+    border: none;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #4a4a4a;
 }
 
-button {
+/* Checkbox Item */
+fieldset label {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    display: block;
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
-    color: white;
+    background-color: white;
+    color: rgb(20, 20, 20);
     border: none;
     border-radius: 5px;
+    font-size: 1.1rem;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
+button[type="submit"]:hover {
+    background-color: #fa1c3a;
 }
 
-button:active {
-    transform: translateY(0);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background: #fff;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-a {
-    margin-right: 10px;
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.2s;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-.error {
-    color: red;
-    margin-top: 10px;
+/* Popup Message Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5cb85c;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
     text-align: center;
 }
 
-/* Additional styles for responsive design */
-@media (max-width: 600px) {
-    form {
-        padding: 20px;
-    }
-    button {
-        font-size: 14px;
-    }
+.popup.show {
+    display: block;
 }

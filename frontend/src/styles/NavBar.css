@@ -1,34 +1,69 @@
-/* C:\Users\varun\employee-management-app\frontend\src\styles\NavBar.css */
-
 .navbar {
-    background-color: #333; /* Dark background */
-    padding: 10px; /* Padding for the navbar */
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between; /* Space between logo and links */
-    align-items: center; /* Center items vertically */
-  }
-  
-  .logo {
-    color: #fff; /* White text for the logo */
-    font-size: 24px; /* Logo font size */
-  }
-  
-  .nav-links {
-    list-style: none; /* Remove default list styles */
-    display: flex; /* Display links in a row */
-  }
-  
-  .nav-link {
-    color: #fff; /* White text for links */
-    text-decoration: none; /* Remove underline from links */
-    padding: 10px 15px; /* Padding around links */
-  }
-  
-  .nav-link:hover {
-    background-color: #555; /* Darker background on hover */
-    border-radius: 5px; /* Rounded corners on hover */
-  }
-  
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px; /* Space between each card */
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  min-width: 100px;
+  transition: background-color 0.3s ease;
+}
+
+/* Assign different mild colors to each button */
+.card-button.dashboard {
+  background-color: #e3f2fd; /* Light blue */
+}
+
+.card-button.about {
+  background-color: #ffecb3; /* Light yellow */
+}
+
+.card-button.tasks {
+  background-color: #c8e6c9; /* Light green */
+}
+
+.card-button.summary {
+  background-color: #ffccbc; /* Light orange */
+}
+
+.card-button.collaborates {
+  background-color: #d1c4e9; /* Light purple */
+}
+
+.card-button.add-employee {
+  background-color: #f8bbd0; /* Light pink */
+}
+
+.card-button.edit-employee {
+  background-color: #b2dfdb; /* Light teal */
+}
+
+.card-button.employee-list {
+  background-color: #ffcdd2; /* Light red */
+}
+
+.card-button:hover {
+  opacity: 0.9; /* Slightly darker on hover */
+}

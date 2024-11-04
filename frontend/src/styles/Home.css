@@ -1,0 +1,130 @@
+/* HomePage.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+}
+
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  background: linear-gradient(120deg, #005bea, #00c6fb);
+  color: white;
+  padding: 60px 20px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* About Section */
+.about-section {
+  background-color: #e8f0fe;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 40px 0;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  color: #005bea;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Features Section */
+.features-section {
+  background-color: #f1f8e9;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 40px 0;
+}
+
+.features-section h2 {
+  font-size: 32px;
+  color: #388e3c;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.attendance { background-color: #e3f2fd; }
+.tasks { background-color: #fff3e0; }
+.performance { background-color: #f1f8e9; }
+.payroll { background-color: #ffebee; }
+
+.feature-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  color: #333;
+  margin: 15px 0 10px;
+}
+
+.feature-card p {
+  font-size: 16px;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #ffebee;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 40px 0;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  color: #d32f2f;
+}
+
+.contact-details p {
+  font-size: 18px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  margin-top: 40px;
+}
