@@ -42,6 +42,7 @@ const EditList = () => {
 
   return (
     <div>
+      
       <h2>Edit List</h2>
       <ul>
         {employees.map((employee) => (

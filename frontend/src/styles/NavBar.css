@@ -1,69 +1,122 @@
+/* Container for the entire navbar */
+/* Container for the entire navbar */
 .navbar {
-  background-color: #f4f9fd;
-  padding: 10px 0;
+  width: 100%;
+  background-color: #333; /* Dark background color for the navbar */
+  padding: 10px 0; /* Adjust if needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Container that holds logo and navigation links */
 .navbar-container {
   display: flex;
-  justify-content: space-between;                                                                 
+  justify-content: space-between;
   align-items: center;
+  max-width: 1700px;
+  
+  padding: 0; /* Remove padding to align the logo perfectly to the left */
 }
 
+/* Styling the logo */
 .logo {
-  color: #333;
-  font-size: 24px;
+  font-size: 1.8rem;
   font-weight: bold;
+  color: white; /* White text for the logo */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 30px;
+  margin: 5; /* No margin to ensure it stays in the corner */
 }
 
+
+/* Flexbox container for navigation links */
 .nav-links {
   display: flex;
-  gap: 10px; /* Space between each card */
+  gap: 15px;
 }
 
+/* Styling the navigation buttons */
 .card-button {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #333;
-  font-weight: 500;
-  text-align: center;
-  min-width: 100px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white; /* White text */
+  background-color: transparent; /* Transparent background */
+  border: none;
+  padding: 5px 15px; /* Slight padding for spacing */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+.card-button:hover {
+  background-color: #5e5e5e; /* Green background on hover */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow on hover */
+}
+
+/* Active state for buttons */
+.card-button:active {
+  transform: translateY(1px);
+}
+
+/* Styling for the search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #555; /* Darker gray background */
+  border-radius: 4px;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.search-container input[type="text"] {
+  border: none;
+  padding: 8px;
+  outline: none;
+  width: 200px; /* Adjustable width */
+  background-color: #444; /* Darker input background */
+  color: white;
+}
+
+.search-container input[type="text"]::placeholder {
+  color: #000000; /* Lighter placeholder color */
+}
+
+.search-container button {
+  background-color: #4CAF50;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Assign different mild colors to each button */
-.card-button.dashboard {
-  background-color: #e3f2fd; /* Light blue */
+.search-container button:hover {
+  background-color: #45a049; /* Darker green on hover */
 }
 
-.card-button.about {
-  background-color: #ffecb3; /* Light yellow */
-}
-
-.card-button.tasks {
-  background-color: #c8e6c9; /* Light green */
-}
-
-.card-button.summary {
-  background-color: #ffccbc; /* Light orange */
-}
-
-.card-button.collaborates {
-  background-color: #d1c4e9; /* Light purple */
-}
-
-.card-button.add-employee {
-  background-color: #f8bbd0; /* Light pink */
-}
-
-.card-button.edit-employee {
-  background-color: #cef590; /* Light teal */
-}
-
-.card-button.employee-list {
-  background-color: #ffcdd2; /* Light red */
-}
-
-.card-button:hover {
-  opacity: 0.9; /* Slightly darker on hover */
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .logo {
+    margin-bottom: 20px;
+  }
 }

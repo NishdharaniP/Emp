@@ -2,10 +2,12 @@
 import React from 'react';
 import '../styles/Home.css';
 
-const Home= () => {
+const Home = () => {
   return (
+   
     <div className="home-container">
       {/* Header Section */}
+     
       <header className="hero-section">
         <h1 className="hero-title">Welcome to StaffSync</h1>
         <p className="hero-subtitle">Empowering You to Manage Your Workforce Efficiently</p>
@@ -27,7 +29,8 @@ const Home= () => {
         <h2>Our Key Features</h2>
         <div className="features-grid">
           <div className="feature-card attendance">
-            <img src="https://img.icons8.com/fluency/96/attendance.png" alt="Attendance" />
+            {/* Updated image URL */}
+            <img src="-https://cdn-icons-png.flaticon.com/512/709/709693.png" alt="Attendance" />
             <h3>Attendance Tracking</h3>
             <p>Seamlessly monitor and record employee attendance with real-time updates. StaffSync’s attendance tracking ensures accurate reporting and provides month-end attendance summaries for easy payroll processing.</p>
           </div>

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const employeeRoutes = require('./routes/employeeRoutes');
-
+const detailsModel = require('./models/User')
 dotenv.config();
 const app = express();
 
@@ -17,7 +17,36 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Routes
+  app.post('/login',(req,res)=>
+      {
+          const {email,password}=req.body
+          detailsModel.findOne({email:email})
+          .then(user =>
+          {
+              if(user)
+              {
+                  if(user.password== password)
+                  {
+                      res.json("Success")
+                  }
+                  else
+                  {
+                      res.json("Incorrect")
+                  }
+              }
+              else
+              {
+                  res.json("no record")
+              }
+          })
+      })
+  app.post('/register',(req,res)=>
+  {
+      detailsModel.create(req.body)
+      .then(details => res.json(details))
+      .catch(err => res.json(err))
+  })
+  
 app.use('/api/employees', employeeRoutes);
 
 // Start the server

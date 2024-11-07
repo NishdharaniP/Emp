@@ -24,3 +24,4 @@ router.post('/register', registerEmployee); // Registration route
 router.post('/login', loginEmployee);       // Login route
 
 module.exports = router;
+

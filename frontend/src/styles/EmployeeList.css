@@ -1,64 +1,176 @@
-/* EmployeeStyle.css */
+/* General Styling for the Employee List Page */
+.employee-list {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7; /* Light background */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #bb8686;
-    margin: 0;
-    padding: 0;
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 30px; /* Increased margin to give more space */
+}
+
+/* Search Bar Styling */
+.search-bar-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Maximum width of the search bar */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Padding to make room for the icon on the left */
+  border: 2px solid black;  /* Black border for the search bar */
+  border-radius: 5px;        /* Rounded corners */
+  background-color: white;   /* White background */
+  font-size: 1.1em;
+}
+
+.search-bar:focus {
+  outline: none;             /* Remove outline on focus */
+  box-shadow: 0 0 5px #007bff; /* Optional: Add focus effect */
+}
+
+/* Add a search icon inside the input */
+.search-icon {
+  position: absolute;
+  right: 10px;                /* Position it on the left inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: #000000;            /* Blue color for the icon */
+  pointer-events: none;      /* Prevent clicking on the icon */
+}
+
+/* Styling for the unordered list */
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+  max-width: 800px;
+}
+
+.employee-item {
+  background-color: #fff; /* White background for list items */
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.employee-item:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Styling for the employee information */
+.employee-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Ensure that name and button are on the same line */
+}
+
+.employee-info .employee-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Increased margin between name and button */
+}
+
+.employee-info .employee-name .employee-icon {
+  font-size: 1.3em;
+  margin-right: 10px; /* Margin between icon and name */
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.employee-info .employee-name .employee-icon:hover {
+  color: #0056b3; /* Change color on hover */
+}
+
+.employee-info button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1em;
+}
+
+.employee-info button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight grow effect on hover */
+}
+
+.employee-info button:active {
+  background-color: #004085;
+}
+
+/* Tooltip Styling */
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  font-size: 0.9em;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.employee-item:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .employee-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
+  .employee-info button {
+    width: 100%;
+    margin-top: 15px;
+  }
+
   h2 {
-    text-align: center;
-    color: #333;
-    margin: 20px 0;
+    font-size: 1.5em;
   }
-  
+
   ul {
-    list-style-type: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 0 auto;
+    width: 90%;
   }
-  
-  li {
-    background-color: #cf019c;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: box-shadow 0.3s ease;
+
+  .search-bar {
+    width: 100%;
+    max-width: none;
+    background-color: white;
+    color: #333;
   }
-  
-  li:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  @media (max-width: 600px) {
-    li {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
-  
+}

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getEmployee } from '../services/employeeService';
 import '../styles/EmployeeDetails.css';
 
+
 const EmployeeDetails = () => {
   const { id } = useParams();
   const [employee, setEmployee] = useState(null);
@@ -24,6 +25,7 @@ const EmployeeDetails = () => {
 
   return (
     <div className="employee-details">
+    
       <h2>Employee Details</h2>
       <div className="employee-card">
         <p><strong>Name:</strong> {employee.name}</p>
