@@ -69,9 +69,10 @@ const AddEmployee = () => {
     }, [showPopup]);
 
     return (
-        <div>
+        <div >
             <h2>Add Employee</h2>
             <form onSubmit={handleSubmit}>
+           
                 <label>
                     Employee Name:
                     <input type="text" name="name" value={employee.name} onChange={handleChange} placeholder="Employee Name" required />
@@ -184,6 +185,7 @@ const AddEmployee = () => {
                 </fieldset>
 
                 <button type="submit">Add Employee</button>
+             
             </form>
             
             {showPopup && (
@@ -192,6 +194,7 @@ const AddEmployee = () => {
                 </div>
             )}
         </div>
+       
     );
 };
 

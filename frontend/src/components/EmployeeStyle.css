@@ -1,98 +1,120 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Main Container Styling */
+.add-employee-container {
+    max-width: 800px; /* Reduced width for better display */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 20px; /* Space between form fields */
+}
+
+/* Label Styling */
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input and Select Styling */
+input,
+select {
+    padding: 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    font-size: 1em;
+    max-width: 95%; /* Limit input field width */
+}
+
+/* Fieldset Styling */
+fieldset {
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 10px;
+    grid-column: span 2; /* Span across both columns */
+}
+
+legend {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    grid-column: span 2; /* Span across both columns */
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Popup Styling */
 .popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 128, 0, 0.8); /* Green background with transparency */
-    color: white;
+    background-color: #007bff;
+    color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
+    font-size: 1.2em;
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
 }
 
-
-
-form {
-    max-width: 600px;
-    margin: auto;
-    padding: 30px;
-    background-color: #5b759b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    
-    
-}
-
-/* Form Heading */
-h2 {
-    text-align: center;
-    color: #4a4a4a;
-    margin-bottom: 20px;
-}
-
-/* Form Labels */
-label {
-    display: block;
-    margin-bottom: 15px;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Input Fields */
+/* Adjustments for specific input sizes */
+input[type="tel"],
 input[type="text"],
+input[type="number"],
 input[type="email"],
 input[type="password"],
-input[type="number"],
-input[type="tel"],
 input[type="url"],
-input[type="date"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1rem;
+input[type="date"] {
+    width: 95%; /* Ensure consistent input field width */
 }
 
-/* Checkbox Styles */
-fieldset {
-    border: none;
-    padding: 10px 0;
-    font-size: 1rem;
-    color: #4a4a4a;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-employee-container {
+        padding: 15px;
+    }
 
-/* Checkbox Item */
-fieldset label {
-    font-weight: normal;
-    display: inline-block;
-    margin-right: 10px;
-}
+    form {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px;
+    }
 
-input[type="checkbox"] {
-    margin-right: 5px;
+    button[type="submit"] {
+        grid-column: span 1; /* Single column button */
+    }
 }
-
-/* Submit Button */
-button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: white;
-    color: rgb(20, 20, 20);
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #fa1c3a;
-}
-

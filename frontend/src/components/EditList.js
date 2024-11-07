@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchEmployees, deleteEmployeeById } from '../services/employeeService';
@@ -6,6 +5,7 @@ import '../styles/EditList.css';
 
 const EditList = () => {
   const [employees, setEmployees] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,16 +40,40 @@ const EditList = () => {
     }
   };
 
+  // Filter employees based on search input
+  const filteredEmployees = employees.filter((employee) =>
+    employee.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div>
-      
+    <div className="edit-list">
       <h2>Edit List</h2>
+      
+      {/* Search Bar */}
+      <div className="search-bar-container">
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Search by name..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <i className="fa fa-search search-icon"></i> {/* Search Icon */}
+      </div>
+
       <ul>
-        {employees.map((employee) => (
+        {filteredEmployees.map((employee) => (
           <li key={employee._id}>
-            {employee.name} - {employee.position}
-            <button onClick={() => handleShowDetails(employee)}>Edit</button>
-            <button onClick={() => handleDelete(employee)}>Delete</button>
+            <div className="employee-info">
+              {/* Edit Icon before Name */}
+              <i className="fa fa-edit edit-icon"></i>
+              <span className="employee-name">{employee.name}</span>
+            </div>
+            
+            <div className="button-container">
+              <button onClick={() => handleShowDetails(employee)}>Edit</button>
+              <button onClick={() => handleDelete(employee)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>
