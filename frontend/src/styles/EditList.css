@@ -41,7 +41,7 @@
 }
 
 .search-icon {
-  color: #007bff;
+  color: #0c0c0c;
   font-size: 1.5em;
   margin-left: -35px;
   cursor: pointer;
@@ -86,7 +86,7 @@ li:hover {
 /* Edit Icon Before Name */
 .edit-icon {
   margin-right: 10px;
-  color: #007bff;
+  color: #030303;
   font-size: 1.5em;  /* Increased size for better visibility */
   cursor: pointer;  /* Make it visually clear it's clickable */
 }
@@ -111,7 +111,7 @@ li:hover {
 /* Styling the buttons */
 button {
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: #0c0c0c;
   color: #fff;
   border: none;
   border-radius: 6px;

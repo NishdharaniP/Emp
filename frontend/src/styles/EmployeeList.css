@@ -34,7 +34,7 @@ h2 {
 
 .search-bar:focus {
   outline: none;             /* Remove outline on focus */
-  box-shadow: 0 0 5px #007bff; /* Optional: Add focus effect */
+  box-shadow: 0 0 5px #0c0c0c; /* Optional: Add focus effect */
 }
 
 /* Add a search icon inside the input */
@@ -95,16 +95,16 @@ ul {
 .employee-info .employee-name .employee-icon {
   font-size: 1.3em;
   margin-right: 10px; /* Margin between icon and name */
-  color: #007bff;
+  color: #070707;
   transition: color 0.3s ease;
 }
 
 .employee-info .employee-name .employee-icon:hover {
-  color: #0056b3; /* Change color on hover */
+  color: #171718; /* Change color on hover */
 }
 
 .employee-info button {
-  background-color: #007bff;
+  background-color: #020202;
   color: white;
   border: none;
   border-radius: 5px;
@@ -115,12 +115,12 @@ ul {
 }
 
 .employee-info button:hover {
-  background-color: #0056b3;
+  background-color: #080808;
   transform: scale(1.05); /* Slight grow effect on hover */
 }
 
 .employee-info button:active {
-  background-color: #004085;
+  background-color: #080808;
 }
 
 /* Tooltip Styling */

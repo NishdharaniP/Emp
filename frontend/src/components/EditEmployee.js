@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getEmployee, updateEmployee } from '../services/employeeService';
 
+import './EmployeeStyle.css';
+
 const EditEmployee = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -49,7 +51,8 @@ const EditEmployee = () => {
         e.preventDefault();
         try {
             await updateEmployee(id, employee);
-            navigate('/'); // Redirect to employee list or home page after updating
+            window.alert(`${employee.name} was updated successfully.`);
+            navigate('/edit'); // Redirect to employee list or home page after updating
         } catch (error) {
             console.error('Failed to update employee:', error);
             setError('Failed to update employee data');
@@ -58,7 +61,7 @@ const EditEmployee = () => {
 
     return (
         <div>
-            <h1>Edit Employee</h1>
+           
             {employee && (
                 <form onSubmit={handleSubmit}>
                     <label>
@@ -135,7 +138,54 @@ const EditEmployee = () => {
                         </select>
                     </label>
                     {/* Add other fields like email, password, phone number, etc. similarly */}
-                    
+                    <label>
+                    Email:
+                    <input type="email" name="email" value={employee.email} onChange={handleInputChange} placeholder="Email" required />
+                </label>
+                <label>
+                    Password:
+                    <input type="password" name="password" value={employee.password} onChange={handleInputChange} placeholder="Password" required />
+                </label>
+                <label>
+                    Aadhar Number:
+                    <input type="text" name="aadharNo" value={employee.aadharNo} onChange={handleInputChange} placeholder="Aadhar Number" required />
+                </label>
+                <label>
+                    PAN Number:
+                    <input type="text" name="panNo" value={employee.panNo} onChange={handleInputChange} placeholder="PAN Number" required />
+                </label>
+                <label>
+                    GitHub ID:
+                    <input type="text" name="githubId" value={employee.githubId} onChange={handleInputChange} placeholder="GitHub ID" />
+                </label>
+                <label>
+                    LinkedIn Profile:
+                    <input type="url" name="linkedIn" value={employee.linkedIn} onChange={handleInputChange} placeholder="LinkedIn Profile" />
+                </label>
+                <label>
+                    Phone Number:
+                    <input type="tel" name="phoneNumber" value={employee.phoneNumber} onChange={handleInputChange} placeholder="Phone Number" required />
+                </label>
+                <label>
+                    Address:
+                    <input type="text" name="address" value={employee.address} onChange={handleInputChange} placeholder="Address" required />
+                </label>
+                <label>
+                    Emergency Contact:
+                    <input type="tel" name="emergencyContact" value={employee.emergencyContact} onChange={handleInputChange} placeholder="Emergency Contact" required />
+                </label>
+                <label>
+                    Relationship to Emergency Contact:
+                    <input type="text" name="relationshipToEmergency" value={employee.relationshipToEmergency} onChange={handleInputChange} placeholder="Relationship to Emergency Contact" required />
+                </label>
+                <label>
+                    Blood Group:
+                    <input type="text" name="bloodGroup" value={employee.bloodGroup} onChange={handleInputChange} placeholder="Blood Group" required />
+                </label>
+                <label>
+                    Education Details:
+                    <input type="text" name="education" value={employee.education} onChange={handleInputChange} placeholder="Education Details" />
+                </label>
                     <fieldset>
                         <legend>Languages Known:</legend>
                         {['English', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Italian', 'Portuguese', 'Russian', 'Arabic'].map(lang => (
